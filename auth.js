@@ -2,7 +2,7 @@
     // Checa se o usuário já está logado
     const token = localStorage.getItem('authToken');
     const logoutButton = document.getElementById('logoutButton');
-  
+    logoutButton.classList.remove("hidden")
     // Função para mostrar o modal de login
     function showLoginModal() {
       const modal = document.createElement('div');
