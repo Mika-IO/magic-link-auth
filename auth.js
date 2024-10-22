@@ -25,6 +25,9 @@
       document.getElementById('email-form').addEventListener('submit', async function (e) {
         e.preventDefault();
         const email = document.getElementById('email').value;
+        const submitButton = document.querySelector('button[type="submit"]');
+        submitButton.disabled = true;  // Desabilita o botão
+        submitButton.textContent = 'Sending...'; 
         
         const currentPath = window.location.pathname;  // Obtém o caminho atual
         const hostname = window.location.origin;  // Obtém o hostname completo (ex: https://mikaio.dev)
@@ -51,7 +54,12 @@
               <p class="text-gray-500 mt-2">Confirm your email, click on the link we sent to your email, you will be logged in automatically.</p>
             </div>
           `;
-      }
+        }else {
+          // Se houver erro, habilita o botão novamente
+          submitButton.disabled = false;
+          submitButton.textContent = 'Submit';  // Retorna o texto original do botão (opcional)
+          alert('Failed to send the magic link. Please try again.');
+        }
       
       });
     }
