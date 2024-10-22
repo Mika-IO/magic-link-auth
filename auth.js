@@ -2,7 +2,6 @@
     // Checa se o usuário já está logado
     const token = localStorage.getItem('authToken');
     const logoutButton = document.getElementById('logoutButton');
-    logoutButton.classList.remove("hidden");
   
     // Função para mostrar o modal de login
     function showLoginModal() {
@@ -27,7 +26,7 @@
         e.preventDefault();
         const email = document.getElementById('email').value;
         
-        const response = await fetch('https://magic-link-auth-api-production.up.railway.app', {
+        const response = await fetch('https://magic-link-auth-api-production.up.railway.app/send-magic-link', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
