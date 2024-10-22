@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎩🪄 Magic Auth</title>
+  
+  <!-- Prism.js CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS for general styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4 md:p-6">
+
+  <div class="text-center">
+      <h1 class="text-2xl md:text-3xl font-bold mb-4">🎩🪄 Magic Auth</h1>
+      <p class="text-md md:text-lg mb-6">Magic links in a magic way</p>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 md:px-8 py-2 rounded hidden" id="logoutButton">
+          Logout
+      </button>
+  </div>
+
+  <div class="mt-8 md:mt-12 max-w-lg mx-auto bg-white p-4 md:p-6 rounded shadow">
+      <h2 class="text-xl md:text-2xl font-bold mb-4">Why Magic Links? 🔗✨</h2>
+      <p class="text-sm md:text-base mb-4">
+        Magic Link authentication provides a seamless, secure, and user-friendly way to log in. Here's why you'll love using Magic Links:
+      </p>
+    
+      <ul class="list-disc list-inside mb-6 text-sm md:text-base">
+        <li>💬 <b>No more passwords</b>: Say goodbye to forgotten passwords. Users receive a secure link to log in instantly.</li><br>
+        <li>📧 <b>Email-based login</b>: Users just need to click a link sent to their email. Simple, fast, and efficient.</li><br>
+        <li>🔒 <b>Enhanced security</b>: Magic Links eliminate the risk of weak or reused passwords, ensuring safer authentication.</li><br>
+        <li>🚀 <b>Easy integration</b>: With just a line of code, you can implement Magic Link authentication on your site.</li><br>
+      </ul>
+    
+      <h3 class="text-lg md:text-xl font-semibold mb-2">1. Add the code to your page! 💻</h3>
+      <p class="text-sm md:text-base mb-4">
+        Place the following code on your page to add the magic link feature:
+      </p>
+      <!-- Code snippet with language highlighting -->
+      <pre class="bg-gray-100 p-3 rounded text-sm md:text-base overflow-x-auto">
+        <code class="language-html">
+&lt;button id="logoutButton"&gt;Logout&lt;/button&gt;
+&lt;script src="https://mikaio.dev/magic-link-auth/auth.js"&gt;&lt;/script&gt;
+        </code>
+      </pre>
+  </div>
+
+  <!-- Prism.js JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+
+  <!-- Lógica do logout -->
+  <script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      localStorage.removeItem('authToken'); // Remove o token de autenticação
+      window.location.reload(); // Recarrega a página após o logout
+    });
+  </script>
+
+</body>
+</html>
