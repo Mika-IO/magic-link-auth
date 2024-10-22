@@ -27,7 +27,7 @@
         e.preventDefault();
         const email = document.getElementById('email').value;
         
-        const response = await fetch('https://magic-link-auth-api-production.up.railway.app↗', {
+        const response = await fetch('https://magic-link-auth-api-production.up.railway.app', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
