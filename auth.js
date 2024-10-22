@@ -26,13 +26,21 @@
         e.preventDefault();
         const email = document.getElementById('email').value;
         
+        const currentPath = window.location.pathname;  // Obtém o caminho atual
+        const hostname = window.location.origin;  // Obtém o hostname completo (ex: https://mikaio.dev)
+        const redirectUrl = `${hostname}${currentPath}`;  // Combina o hostname com o caminho
+
         const response = await fetch('https://magic-link-auth-api-production.up.railway.app/send-magic-link', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ email })
+          body: JSON.stringify({ 
+            email,
+            redirect_url: redirectUrl  // Envia a URL dinamicamente
+          })
         });
+
   
         if (response.ok) {
           // Substitui o formulário pela mensagem
