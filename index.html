@@ -10,6 +10,18 @@
 
   <!-- Tailwind CSS for general styling -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Configuração para personalizar a cor primária
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#0F8AFD", // Nova cor primária
+                },
+            },
+        },
+    };
+</script>
 </head>
 <body class="bg-gray-100 p-4 md:p-6">
 
@@ -50,14 +62,6 @@
   <!-- Prism.js JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
-
-  <!-- Lógica do logout -->
-  <script>
-    document.getElementById('logoutButton').addEventListener('click', function() {
-      localStorage.removeItem('authToken'); // Remove o token de autenticação
-      window.location.reload(); // Recarrega a página após o logout
-    });
-  </script>
-
+  <script src="https://mikaio.dev/magic-link-auth/auth.js"></script>  
 </body>
 </html>
