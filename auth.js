@@ -47,6 +47,7 @@
   
         if (response.ok) {
           // Substitui o formulário pela mensagem
+          localStorage.setItem('emailLangmentor', email);
           const modalContent = document.getElementById('email-form').parentElement;
           modalContent.innerHTML = `
             <div class="text-center">
